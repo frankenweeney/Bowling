@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class LaneScript : MonoBehaviour
+public class RotateLane : MonoBehaviour
 {
     public float rotationSpeed = 3f;
 
