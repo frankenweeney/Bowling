@@ -6,7 +6,7 @@ using TMPro;
 public class LaunchScript : MonoBehaviour
 {
     public Rigidbody rb;
-    public float rollforce;
+    public float force;
     public ForceMode ForceMode;
     public Image progressBar;
 
@@ -16,6 +16,7 @@ public class LaunchScript : MonoBehaviour
   
 
     private bool held = false;
+    public bool launched = false;
 
 
     public void Start()
@@ -50,8 +51,16 @@ public class LaunchScript : MonoBehaviour
 
     }
 
+    public void FixedUpdate()
+    {
+        if (launched == true)
+        {
+            rb.AddForce(Vector3.forward * force, ForceMode.Force);
+        }
+    }
+
     public void ButtoHeld()
     {
-        rb.AddForce(Vector3.forward * rollforce, ForceMode);
+        launched = true;
     }
 }

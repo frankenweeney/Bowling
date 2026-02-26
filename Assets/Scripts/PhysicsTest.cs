@@ -17,10 +17,6 @@ public class PhysicsTest : MonoBehaviour
     {
     }
 
-    public void OnRoll(InputAction.CallbackContext context)
-    {
-        rb.AddForce(Vector3.forward * rollforce, ForceMode);
-    }
 
     public void RollLeft(InputAction.CallbackContext context)
     {
