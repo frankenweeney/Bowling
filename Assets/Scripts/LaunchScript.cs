@@ -13,7 +13,7 @@ public class LaunchScript : MonoBehaviour
 
     private float startTime = 0f;
     private float timer = 0f;
-    public float holdTime = 4.0f;
+    public float holdTime = 2.0f;
 
   
     public bool launched = false;
@@ -35,7 +35,7 @@ public class LaunchScript : MonoBehaviour
         {
             timer += Time.deltaTime;
             progressBar.fillAmount += Time.deltaTime / holdTime;
-            force += (Time.deltaTime / holdTime) * 10000;
+            force += (Time.deltaTime / holdTime) * 100000;
 
             if (timer > (startTime + holdTime))
             {
