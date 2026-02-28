@@ -1,7 +1,8 @@
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
+using static UnityEngine.Rendering.DebugUI;
 
 public class LaunchScript : MonoBehaviour
 {
@@ -13,9 +14,8 @@ public class LaunchScript : MonoBehaviour
     private float startTime = 0f;
     private float timer = 0f;
     public float holdTime = 4.0f;
-  
 
-    private bool held = false;
+  
     public bool launched = false;
 
 
@@ -31,36 +31,29 @@ public class LaunchScript : MonoBehaviour
             timer = startTime;
         }
 
-        if (Input.GetKey(KeyCode.Space) && held == false)
+        if (Input.GetKey(KeyCode.Space) && launched == false)
         {
             timer += Time.deltaTime;
+            progressBar.fillAmount += Time.deltaTime / holdTime;
+            force += (Time.deltaTime / holdTime) * 10000;
 
             if (timer > (startTime + holdTime))
             {
-                held = true;
                 ButtoHeld();
             }
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            held = false;
-            held = false;
+            ButtoHeld();
             progressBar.fillAmount = 0;
         }
 
     }
 
-    public void FixedUpdate()
-    {
-        if (launched == true)
-        {
-            rb.AddForce(Vector3.forward * force, ForceMode.Force);
-        }
-    }
-
     public void ButtoHeld()
     {
+        rb.AddForce(Vector3.forward * force, ForceMode.Force);
         launched = true;
     }
 }
