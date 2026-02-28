@@ -43,7 +43,7 @@ public class LaunchScript : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space) && launched == false)
         {
             ButtoHeld();
             progressBar.fillAmount = 0;
