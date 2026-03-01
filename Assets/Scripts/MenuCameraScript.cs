@@ -27,11 +27,11 @@ public class MenuCameraScript : MonoBehaviour
 
     public void TurnLeft()
     {
-        camera.transform.Rotate(left * rotationSpeed * Time.deltaTime);
+        camera.transform.Rotate(rotationSpeed * Time.deltaTime * left);
     }
 
     public void TurnRight()
     {
-        camera.transform.Rotate(right * rotationSpeed * Time.deltaTime);
+        camera.transform.Rotate(rotationSpeed * Time.deltaTime * right);
     }
 }

@@ -10,6 +10,7 @@ public class LaunchScript : MonoBehaviour
     public float force;
     public ForceMode ForceMode;
     public Image progressBar;
+    public Image levelBar;
 
     private float startTime = 0f;
     private float timer = 0f;
@@ -44,13 +45,13 @@ public class LaunchScript : MonoBehaviour
 
             if (timer > (startTime + holdTime))
             {
-                ButtoHeld();
+                Launch();
             }
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && launched == false)
         {
-            ButtoHeld();
+            Launch();
             progressBar.fillAmount = 0;
         }
 
@@ -67,9 +68,11 @@ public class LaunchScript : MonoBehaviour
 
     }
 
-    public void ButtoHeld()
+    public void Launch()
     {
         rb.AddForce(Vector3.forward * force, ForceMode.Force);
         launched = true;
+        levelBar.enabled = false;
+        progressBar.enabled = false;
     }
 }
