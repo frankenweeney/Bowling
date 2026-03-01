@@ -1990,6 +1990,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2104175902}
   m_SourcePrefab: {fileID: 100100000, guid: b50127287bd0cae45bf1cfce3fb32045, type: 3}
+--- !u!1 &568100921
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568100922}
+  m_Layer: 0
+  m_Name: ballPosRight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &568100922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568100921}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 65.456, y: 0.78, z: 0.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620541756
 GameObject:
   m_ObjectHideFlags: 0
@@ -2166,7 +2197,7 @@ Transform:
   m_GameObject: {fileID: 620541756}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 129.6, y: 0.78, z: 0.18}
+  m_LocalPosition: {x: 62.58, y: 0.78, z: 0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2186,7 +2217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhysicsTest
   rb: {fileID: 620541763}
-  rollforce: 1000
+  rollforce: 6000
   ForceMode: 0
 --- !u!54 &620541763
 Rigidbody:
@@ -2196,7 +2227,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620541756}
   serializedVersion: 5
-  m_Mass: 50
+  m_Mass: 200
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -2231,8 +2262,13 @@ MonoBehaviour:
   force: 300
   ForceMode: 0
   progressBar: {fileID: 2131795535}
-  holdTime: 1
+  holdTime: 0.5
+  waypoints:
+  - {fileID: 1780692367}
+  - {fileID: 568100922}
+  speed: 6
   launched: 0
+  held: 0
 --- !u!1 &810563205 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b50127287bd0cae45bf1cfce3fb32045, type: 3}
@@ -4722,6 +4758,37 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1657357902}
   m_SourcePrefab: {fileID: 100100000, guid: b50127287bd0cae45bf1cfce3fb32045, type: 3}
+--- !u!1 &1780692366
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1780692367}
+  m_Layer: 0
+  m_Name: ballPosLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1780692367
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780692366}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 59.79, y: 0.78, z: 0.18}
+  m_LocalScale: {x: 3.6693, y: 3.6693, z: 3.6693}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1844389597
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5968,6 +6035,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 1780692367}
+  - {fileID: 568100922}
   - {fileID: 620541761}
   - {fileID: 1675587669}
   - {fileID: 2032996669}
