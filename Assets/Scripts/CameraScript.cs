@@ -1,20 +1,31 @@
 using JetBrains.Annotations;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Camera camera;
+    public Camera camera2;
     public GameObject ball;
     public Vector3 offset;
+    private bool hasRun;
     void Start()
     {
         offset = camera.transform.position - ball.transform.position;
+        camera.enabled = true;
+        camera2.enabled = false;
+        hasRun = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         camera.transform.position = ball.transform.position + offset;
+
+        if (ball.transform.position.y < -4 && hasRun == false)
+        {
+            camera.enabled = !camera.enabled;
+            camera2.enabled = !camera2.enabled;
+            hasRun = true;
+        }
     }
 }
