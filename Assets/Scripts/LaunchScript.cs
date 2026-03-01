@@ -15,13 +15,17 @@ public class LaunchScript : MonoBehaviour
     private float timer = 0f;
     public float holdTime = 2.0f;
 
-  
-    public bool launched = false;
+    public Transform[] waypoints;
+    public float speed = 2f; 
+    private int currentWaypointIndex = 0;
 
+    public bool launched = false;
+    public bool held = false;
 
     public void Start()
     {
         progressBar.fillAmount = 0;
+        held = false;
     }
     public void Update()
     {
@@ -29,13 +33,14 @@ public class LaunchScript : MonoBehaviour
         {
             startTime = Time.time;
             timer = startTime;
+            held = true;
         }
 
         if (Input.GetKey(KeyCode.Space) && launched == false)
         {
             timer += Time.deltaTime;
             progressBar.fillAmount += Time.deltaTime / holdTime;
-            force += (Time.deltaTime / holdTime) * 100000;
+            force += (Time.deltaTime / holdTime) * 400000;
 
             if (timer > (startTime + holdTime))
             {
@@ -47,6 +52,17 @@ public class LaunchScript : MonoBehaviour
         {
             ButtoHeld();
             progressBar.fillAmount = 0;
+        }
+
+        if (held == false)
+        {
+            if (waypoints.Length == 0) return;
+            transform.position = Vector3.MoveTowards(transform.position, waypoints[currentWaypointIndex].position, speed * Time.deltaTime);
+
+            if (Vector3.Distance(transform.position, waypoints[currentWaypointIndex].position) < 0.1f)
+            {
+                currentWaypointIndex = (currentWaypointIndex + 1) % waypoints.Length; 
+            }
         }
 
     }
