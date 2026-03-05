@@ -20,12 +20,11 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         camera.transform.position = ball.transform.position + offset;
-
-        if (ball.transform.position.y < -4 && hasRun == false)
-        {
-            camera.enabled = !camera.enabled;
-            camera2.enabled = !camera2.enabled;
-            hasRun = true;
-        }
+    }
+    public void ToggleCamera()
+    {
+        camera.enabled = !camera.enabled;
+        camera2.enabled = !camera2.enabled;
+        hasRun = true;
     }
 }

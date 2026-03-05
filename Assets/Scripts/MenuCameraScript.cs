@@ -1,37 +1,31 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class MenuCameraScript : MonoBehaviour
 {
     public Camera camera;
-    public float rotationSpeed;
-    public Vector3 left;
-    public Vector3 right;
+    public float rotationSpeed = 90;
+ 
     void Start()
     {
-        left = new Vector3(0, -90, 0);
-        right = new Vector3(0, 90, 0);
+       
     }
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow)) 
         {
-            TurnLeft();
+            RotateCamera(-1);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            TurnRight();    
+            RotateCamera(1);
         }
     }
 
-    public void TurnLeft()
+    private void RotateCamera(int direction)
     {
-        camera.transform.Rotate(rotationSpeed * Time.deltaTime * left);
-    }
-
-    public void TurnRight()
-    {
-        camera.transform.Rotate(rotationSpeed * Time.deltaTime * right);
+        transform.Rotate(Vector3.up * direction * rotationSpeed * Time.deltaTime);
     }
 }

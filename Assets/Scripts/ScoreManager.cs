@@ -1,6 +1,7 @@
+using NUnit.Framework;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-
 public class ScoreManager : MonoBehaviour
 {
     public GameObject pin1;
@@ -15,72 +16,60 @@ public class ScoreManager : MonoBehaviour
     public GameObject pin10;
 
     public GameObject ball;
-
+    public TextMeshProUGUI ScoreText;
     public int score;
-    public bool hasRun;
     void Start()
     {
-        hasRun = false;
+        score = 0;
     }
     void Update()
     {
-       if (ball.transform.position.y < -4 && hasRun == false)
-       {
-         CalculateScore();
-         hasRun = true;
-       }
+
     }
 
     public void CalculateScore()
     {
-        if (pin1.transform.rotation.eulerAngles.x != 0 || pin1.transform.rotation.eulerAngles.z != 0)
+        if (pin1.transform.rotation.x > 1 || pin1.transform.rotation.x < -1 || pin1.transform.rotation.z > 1 || pin1.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin2.transform.rotation.x > 1 || pin2.transform.rotation.x < -1 || pin2.transform.rotation.z > 1 || pin2.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin3.transform.rotation.x > 1 || pin3.transform.rotation.x < -1 || pin3.transform.rotation.z > 1 || pin3.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin4.transform.rotation.x > 1 || pin4.transform.rotation.x < -1 || pin4.transform.rotation.z > 1 || pin4.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin5.transform.rotation.x > 1 || pin5.transform.rotation.x < -1 || pin5.transform.rotation.z > 1 || pin5.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin6.transform.rotation.x > 1 || pin6.transform.rotation.x < -1 || pin6.transform.rotation.z > 1 || pin6.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin7.transform.rotation.x > 1 || pin7.transform.rotation.x < -1 || pin7.transform.rotation.z > 1 || pin7.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin8.transform.rotation.x > 1 || pin8.transform.rotation.x < -1 || pin8.transform.rotation.z > 1 || pin8.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin9.transform.rotation.x > 1 || pin9.transform.rotation.x < -1 || pin9.transform.rotation.z > 1 || pin9.transform.rotation.z < -1)
+        {
+            score += 1;
+        }
+        if (pin10.transform.rotation.x > 1 || pin10.transform.rotation.x < -1 || pin10.transform.rotation.z > 1 || pin10.transform.rotation.z < -1)
         {
             score += 1;
         }
 
-        if (pin2.transform.rotation.eulerAngles.x != 0 || pin2.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
-
-        if (pin3.transform.rotation.eulerAngles.x != 0 || pin3.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
-
-        if (pin4.transform.rotation.eulerAngles.x != 0 || pin4.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
-
-        if (pin5.transform.rotation.eulerAngles.x != 0 || pin5.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
-
-        if (pin6.transform.rotation.eulerAngles.x != 0 || pin6.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
-
-        if (pin7.transform.rotation.eulerAngles.x != 0 || pin7.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
-
-        if (pin8.transform.rotation.eulerAngles.x != 0 || pin8.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
-
-        if (pin9.transform.rotation.eulerAngles.x != 0 || pin9.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
-
-        if (pin10.transform.rotation.eulerAngles.x != 0 || pin10.transform.rotation.eulerAngles.z != 0)
-        {
-            score += 1;
-        }
+        ScoreText.text = "Score: " + score.ToString();
     }
 }
