@@ -29,45 +29,55 @@ public class ScoreManager : MonoBehaviour
 
     public void CalculateScore()
     {
-        if (pin1.transform.rotation.x > 1 || pin1.transform.rotation.x < -1 || pin1.transform.rotation.z > 1 || pin1.transform.rotation.z < -1)
+        if (pin1.transform.rotation.eulerAngles.x > 1 || pin1.transform.rotation.eulerAngles.x < -1 || pin1.transform.rotation.eulerAngles.z > 1 || pin1.transform.rotation.eulerAngles.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin2.transform.rotation.x > 1 || pin2.transform.rotation.x < -1 || pin2.transform.rotation.z > 1 || pin2.transform.rotation.z < -1)
+        if (pin2.transform.rotation.eulerAngles.x > 1 || pin2.transform.rotation.eulerAngles.x < -1 || pin2.transform.rotation.eulerAngles.z > 1 || pin2.transform.rotation.eulerAngles.x < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin3.transform.rotation.x > 1 || pin3.transform.rotation.x < -1 || pin3.transform.rotation.z > 1 || pin3.transform.rotation.z < -1)
+        if (pin3.transform.rotation.eulerAngles.x > 1 || pin3.transform.rotation.eulerAngles.x < -1 || pin3.transform.rotation.eulerAngles.z > 1 || pin3.transform.rotation.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin4.transform.rotation.x > 1 || pin4.transform.rotation.x < -1 || pin4.transform.rotation.z > 1 || pin4.transform.rotation.z < -1)
+        if (pin4.transform.rotation.eulerAngles.x > 1 || pin4.transform.rotation.eulerAngles.x < -1 || pin4.transform.rotation.eulerAngles.z > 1 || pin4.transform.rotation.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin5.transform.rotation.x > 1 || pin5.transform.rotation.x < -1 || pin5.transform.rotation.z > 1 || pin5.transform.rotation.z < -1)
+        if (pin5.transform.rotation.eulerAngles.x > 1 || pin5.transform.rotation.eulerAngles.x < -1 || pin5.transform.rotation.eulerAngles.z > 1 || pin5.transform.rotation.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin6.transform.rotation.x > 1 || pin6.transform.rotation.x < -1 || pin6.transform.rotation.z > 1 || pin6.transform.rotation.z < -1)
+        if (pin6.transform.rotation.eulerAngles.x > 1 || pin6.transform.rotation.eulerAngles.x < -1 || pin6.transform.rotation.eulerAngles.z > 1 || pin6.transform.rotation.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin7.transform.rotation.x > 1 || pin7.transform.rotation.x < -1 || pin7.transform.rotation.z > 1 || pin7.transform.rotation.z < -1)
+        if (pin7.transform.rotation.eulerAngles.x > 1 || pin7.transform.rotation.eulerAngles.x < -1 || pin7.transform.rotation.eulerAngles.z > 1 || pin7.transform.rotation.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin8.transform.rotation.x > 1 || pin8.transform.rotation.x < -1 || pin8.transform.rotation.z > 1 || pin8.transform.rotation.z < -1)
+        if (pin8.transform.rotation.eulerAngles.x > 1 || pin8.transform.rotation.eulerAngles.x < -1 || pin8.transform.rotation.eulerAngles.z > 1 || pin8.transform.rotation.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin9.transform.rotation.x > 1 || pin9.transform.rotation.x < -1 || pin9.transform.rotation.z > 1 || pin9.transform.rotation.z < -1)
+        if (pin9.transform.rotation.eulerAngles.x > 1 || pin9.transform.rotation.eulerAngles.x < -1 || pin9.transform.rotation.eulerAngles.z > 1 || pin9.transform.rotation.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
-        if (pin10.transform.rotation.x > 1 || pin10.transform.rotation.x < -1 || pin10.transform.rotation.z > 1 || pin10.transform.rotation.z < -1)
+        if (pin10.transform.rotation.eulerAngles.x > 1 || pin10.transform.rotation.eulerAngles.x < -1 || pin10.transform.rotation.eulerAngles.z > 1 || pin10.transform.rotation.z < -1)
         {
             score += 1;
+            Debug.Log("pin hit");
         }
 
         ScoreText.text = "Score: " + score.ToString();
