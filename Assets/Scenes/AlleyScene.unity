@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuCameraScript
   camera: {fileID: 662381675}
-  rotationSpeed: 10000
+  rotationSpeed: 90
   speed: 100
   uiElements:
   - {fileID: 1281758677}
@@ -234,12 +234,9 @@ MonoBehaviour:
   - {fileID: 1775821152}
   - {fileID: 1773957130}
   - {fileID: 1447334346}
-  walls:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 90, z: 0}
-  - {x: 0, y: 180, z: 0}
-  - {x: 0, y: 270, z: 0}
   inLvlSelection: 0
+  center: {x: 0, y: 3, z: -8}
+  front: {x: -5, y: 3, z: -1}
 --- !u!114 &662381678
 MonoBehaviour:
   m_ObjectHideFlags: 0

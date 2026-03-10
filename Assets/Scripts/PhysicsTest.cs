@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 
 public class PhysicsTest : MonoBehaviour
 {
@@ -34,4 +35,15 @@ public class PhysicsTest : MonoBehaviour
           pinsStruck = true;
         }
     }
+
+    private void Update()
+    {
+        if (rb.transform.position.y < -100)
+        {
+            Scene currentScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(currentScene.name);
+        }
+
+    }
+  
 }
