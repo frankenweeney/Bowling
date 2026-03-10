@@ -21,7 +21,7 @@ public class CameraScript : MonoBehaviour
     {
         camera.transform.position = ball.transform.position + offset;
 
-        if (ball.transform.position.y < -100)
+        if (ball.transform.position.y < -100 && !hasRun)
         {
             ToggleCamera();
         }

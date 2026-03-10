@@ -47,52 +47,52 @@ public class ScoreManager : MonoBehaviour
     {
         if (pin1.transform.rotation.eulerAngles.x > 1 || pin1.transform.rotation.eulerAngles.x < -1 || pin1.transform.rotation.eulerAngles.z > 1 || pin1.transform.rotation.eulerAngles.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 1 hit");
         }
         if (pin2.transform.rotation.eulerAngles.x > 1 || pin2.transform.rotation.eulerAngles.x < -1 || pin2.transform.rotation.eulerAngles.z > 1 || pin2.transform.rotation.eulerAngles.x < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 2 hit");
         }
         if (pin3.transform.rotation.eulerAngles.x > 1 || pin3.transform.rotation.eulerAngles.x < -1 || pin3.transform.rotation.eulerAngles.z > 1 || pin3.transform.rotation.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 3 hit");
         }
         if (pin4.transform.rotation.eulerAngles.x > 1 || pin4.transform.rotation.eulerAngles.x < -1 || pin4.transform.rotation.eulerAngles.z > 1 || pin4.transform.rotation.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 4 hit");
         }
         if (pin5.transform.rotation.eulerAngles.x > 1 || pin5.transform.rotation.eulerAngles.x < -1 || pin5.transform.rotation.eulerAngles.z > 1 || pin5.transform.rotation.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 5 hit");
         }
         if (pin6.transform.rotation.eulerAngles.x > 1 || pin6.transform.rotation.eulerAngles.x < -1 || pin6.transform.rotation.eulerAngles.z > 1 || pin6.transform.rotation.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 6 hit");
         }
         if (pin7.transform.rotation.eulerAngles.x > 1 || pin7.transform.rotation.eulerAngles.x < -1 || pin7.transform.rotation.eulerAngles.z > 1 || pin7.transform.rotation.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 7 hit");
         }
         if (pin8.transform.rotation.eulerAngles.x > 1 || pin8.transform.rotation.eulerAngles.x < -1 || pin8.transform.rotation.eulerAngles.z > 1 || pin8.transform.rotation.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 8 hit");
         }
         if (pin9.transform.rotation.eulerAngles.x > 1 || pin9.transform.rotation.eulerAngles.x < -1 || pin9.transform.rotation.eulerAngles.z > 1 || pin9.transform.rotation.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 9 hit");
         }
         if (pin10.transform.rotation.eulerAngles.x > 1 || pin10.transform.rotation.eulerAngles.x < -1 || pin10.transform.rotation.eulerAngles.z > 1 || pin10.transform.rotation.z < -1)
         {
-            score += 1;
+            score ++;
             Debug.Log("pin 10 hit");
         }
 

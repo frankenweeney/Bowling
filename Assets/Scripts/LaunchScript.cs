@@ -7,6 +7,7 @@ using static UnityEngine.Rendering.DebugUI;
 public class LaunchScript : MonoBehaviour
 {
     public Rigidbody rb;
+    public Collider boost;
     public float force;
     public ForceMode ForceMode;
     public Image progressBar;
@@ -68,11 +69,36 @@ public class LaunchScript : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter(Collider other)
+    {
+        launched = false;
+        ShowProgressBars();
+        force = 0;
+        progressBar.fillAmount = 0;
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        HideProgressBars();
+        launched = true;
+    }
+
     public void Launch()
     {
         rb.AddForce(Vector3.forward * force, ForceMode.Force);
         launched = true;
+        HideProgressBars();
+    }
+
+    public void HideProgressBars()
+    {
         levelBar.enabled = false;
         progressBar.enabled = false;
+    }
+
+    public void ShowProgressBars()
+    {
+        levelBar.enabled = true;
+        progressBar.enabled = true;
     }
 }
