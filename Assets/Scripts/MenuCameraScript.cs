@@ -8,14 +8,7 @@ public class MenuCameraScript : MonoBehaviour
     public float rotationSpeed = 90;
     public float speed = 5f;
 
-    [Header("UI Elements to Cycle Through")]
-    public List<GameObject> uiElements; // Assign in Inspector
-
-    [Header("Input Settings")]
-    public KeyCode nextKey = KeyCode.RightArrow;
-    public KeyCode prevKey = KeyCode.LeftArrow;
-    public bool useMouseScroll = true;
-
+    public List<GameObject> uiElements;
     private int currentIndex = 0;
 
     public bool inLvlSelection;
@@ -32,48 +25,52 @@ public class MenuCameraScript : MonoBehaviour
         }
 
         ShowOnlyCurrent();
+
+        uiElements[currentIndex].SetActive(false);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) 
+        if (Input.GetKey(KeyCode.LeftArrow) && inLvlSelection == false)
         {
-            if (inLvlSelection == false)
-            {
-                RotateCamera(-1);
-            }
+           transform.Rotate(Vector3.down, rotationSpeed * Time.deltaTime);
+        }
 
-            if (inLvlSelection == true)
+        if (Input.GetKey(KeyCode.RightArrow) && inLvlSelection == false)
+        {
+            transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+
+    
+
+
+        if (camera.transform.rotation.eulerAngles.y > -45 && camera.transform.rotation.eulerAngles.y < 45)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                inLvlSelection = true;
+            }
+        }
+
+        if (inLvlSelection == true)
+        {
+            uiElements[currentIndex].SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 CyclePrevious();
             }
-            
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            if (inLvlSelection == false)
-            {
-                RotateCamera(1);
-            }
-
-            if (inLvlSelection == true)
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 CycleNext();
             }
-
-        }
-
-        if ( Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                inLvlSelection = false;
+            }
         }
     }
 
-    private void RotateCamera(int direction)
-    {
-        transform.Rotate(Vector3.up * direction * rotationSpeed * Time.deltaTime, Space.World);
-    }
 
     void CycleNext()
     {
