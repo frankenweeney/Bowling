@@ -24,7 +24,12 @@ public class ScoreManager : MonoBehaviour
     public Button retryLvl;
     public Button menuButton;
     public Button resetButton;
-    public int score;
+    private static int score;
+    private static int hsLvl1;
+    private static int hsLvl2;
+    private static int hsLvl3;
+    private static int hsLvl4;
+    private static int hsLvl5;
     public Rigidbody rb;
 
     public bool scoreCalculated;
@@ -41,7 +46,14 @@ public class ScoreManager : MonoBehaviour
             CalculateScore();
             ShowLevelUI();
         }
+
+        if (score > hsLvl1)
+        {
+            hsLvl1 = score;
+            PlayerPrefs.SetInt("highscore", score);
+        }
     }
+
 
     public void CalculateScore()
     {

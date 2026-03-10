@@ -1748,6 +1748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LaunchScript
   rb: {fileID: 620541763}
+  boost: {fileID: 0}
   force: 300
   ForceMode: 0
   progressBar: {fileID: 2131795535}
