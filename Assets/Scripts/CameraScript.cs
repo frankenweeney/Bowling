@@ -20,6 +20,11 @@ public class CameraScript : MonoBehaviour
     void Update()
     {
         camera.transform.position = ball.transform.position + offset;
+
+        if (ball.transform.position.y < -100)
+        {
+            ToggleCamera();
+        }
     }
     public void ToggleCamera()
     {

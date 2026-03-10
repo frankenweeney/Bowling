@@ -2,6 +2,8 @@ using NUnit.Framework;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public GameObject pin1;
@@ -17,14 +19,28 @@ public class ScoreManager : MonoBehaviour
 
     public GameObject ball;
     public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI LevelText;
+    public Button nextLvl;
+    public Button retryLvl;
+    public Button menuButton;
+    public Button resetButton;
     public int score;
+    public Rigidbody rb;
+
+    public bool scoreCalculated;
     void Start()
     {
         score = 0;
+        scoreCalculated = false;
+        HideLevelUI();
     }
     void Update()
     {
-
+        if (rb.transform.position.y < -100 && !scoreCalculated)
+        {
+            CalculateScore();
+            ShowLevelUI();
+        }
     }
 
     public void CalculateScore()
@@ -32,54 +48,77 @@ public class ScoreManager : MonoBehaviour
         if (pin1.transform.rotation.eulerAngles.x > 1 || pin1.transform.rotation.eulerAngles.x < -1 || pin1.transform.rotation.eulerAngles.z > 1 || pin1.transform.rotation.eulerAngles.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 1 hit");
         }
         if (pin2.transform.rotation.eulerAngles.x > 1 || pin2.transform.rotation.eulerAngles.x < -1 || pin2.transform.rotation.eulerAngles.z > 1 || pin2.transform.rotation.eulerAngles.x < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 2 hit");
         }
         if (pin3.transform.rotation.eulerAngles.x > 1 || pin3.transform.rotation.eulerAngles.x < -1 || pin3.transform.rotation.eulerAngles.z > 1 || pin3.transform.rotation.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 3 hit");
         }
         if (pin4.transform.rotation.eulerAngles.x > 1 || pin4.transform.rotation.eulerAngles.x < -1 || pin4.transform.rotation.eulerAngles.z > 1 || pin4.transform.rotation.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 4 hit");
         }
         if (pin5.transform.rotation.eulerAngles.x > 1 || pin5.transform.rotation.eulerAngles.x < -1 || pin5.transform.rotation.eulerAngles.z > 1 || pin5.transform.rotation.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 5 hit");
         }
         if (pin6.transform.rotation.eulerAngles.x > 1 || pin6.transform.rotation.eulerAngles.x < -1 || pin6.transform.rotation.eulerAngles.z > 1 || pin6.transform.rotation.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 6 hit");
         }
         if (pin7.transform.rotation.eulerAngles.x > 1 || pin7.transform.rotation.eulerAngles.x < -1 || pin7.transform.rotation.eulerAngles.z > 1 || pin7.transform.rotation.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 7 hit");
         }
         if (pin8.transform.rotation.eulerAngles.x > 1 || pin8.transform.rotation.eulerAngles.x < -1 || pin8.transform.rotation.eulerAngles.z > 1 || pin8.transform.rotation.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 8 hit");
         }
         if (pin9.transform.rotation.eulerAngles.x > 1 || pin9.transform.rotation.eulerAngles.x < -1 || pin9.transform.rotation.eulerAngles.z > 1 || pin9.transform.rotation.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 9 hit");
         }
         if (pin10.transform.rotation.eulerAngles.x > 1 || pin10.transform.rotation.eulerAngles.x < -1 || pin10.transform.rotation.eulerAngles.z > 1 || pin10.transform.rotation.z < -1)
         {
             score += 1;
-            Debug.Log("pin hit");
+            Debug.Log("pin 10 hit");
         }
 
         ScoreText.text = "Score: " + score.ToString();
+        scoreCalculated = true;
     }
+
+    public void HideLevelUI()
+    {
+        ScoreText.enabled = false;
+        LevelText.enabled = false;
+        nextLvl.gameObject.SetActive(false);
+        retryLvl.gameObject.SetActive(false);
+        menuButton.gameObject.SetActive(false);
+        resetButton.gameObject.SetActive(true);
+    }
+
+    public void ShowLevelUI()
+    {
+        ScoreText.enabled = true;
+        LevelText.enabled = true;
+        nextLvl.gameObject.SetActive(true);
+        retryLvl.gameObject.SetActive(true);
+        menuButton.gameObject.SetActive(true);
+        resetButton.gameObject.SetActive(false);
+    }
+
+   
 }

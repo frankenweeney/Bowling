@@ -234,7 +234,7 @@ MonoBehaviour:
   - {fileID: 1775821152}
   - {fileID: 1773957130}
   - {fileID: 1447334346}
-  level: {fileID: 1995296921}
+  level: {fileID: 2013046913}
   inLvlSelection: 0
   inBallSelection: 0
   centered: 0
@@ -452,7 +452,7 @@ RectTransform:
   - {fileID: 1775821153}
   - {fileID: 1773957131}
   - {fileID: 1447334347}
-  - {fileID: 1995296920}
+  - {fileID: 2013046912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1026,7 +1026,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775821152}
   m_CullTransparentMesh: 1
---- !u!1 &1995296919
+--- !u!1 &2013046911
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1034,23 +1034,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1995296920}
-  - component: {fileID: 1995296922}
-  - component: {fileID: 1995296921}
+  - component: {fileID: 2013046912}
+  - component: {fileID: 2013046914}
+  - component: {fileID: 2013046913}
   m_Layer: 5
-  m_Name: levelText
+  m_Name: LevelText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1995296920
+--- !u!224 &2013046912
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995296919}
+  m_GameObject: {fileID: 2013046911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1060,16 +1060,16 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 293.3}
+  m_AnchoredPosition: {x: 20, y: 301}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1995296921
+--- !u!114 &2013046913
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995296919}
+  m_GameObject: {fileID: 2013046911}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -1155,13 +1155,13 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1995296922
+--- !u!222 &2013046914
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1995296919}
+  m_GameObject: {fileID: 2013046911}
   m_CullTransparentMesh: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

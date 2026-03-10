@@ -38,11 +38,7 @@ public class PhysicsTest : MonoBehaviour
 
     private void Update()
     {
-        if (rb.transform.position.y < -100)
-        {
-            Scene currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.name);
-        }
+        
 
     }
   

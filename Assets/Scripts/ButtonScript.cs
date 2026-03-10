@@ -8,4 +8,12 @@ public class ButtonScript : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
+    public void GoToLvlTwo()
+    {
+        SceneManager.LoadScene("LevelTwo");
+    }
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("AlleyScene");
+    }
 }

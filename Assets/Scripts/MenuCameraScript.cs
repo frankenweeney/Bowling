@@ -59,7 +59,7 @@ public class MenuCameraScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 inLvlSelection = true;
-                transform.position = Vector3.MoveTowards(transform.position, front, speed * Time.deltaTime);
+                transform.position = (front);
             }
         }
         if (transform.rotation.eulerAngles.y > 45 || transform.rotation.eulerAngles.y < 135 && centered == true)
@@ -74,6 +74,7 @@ public class MenuCameraScript : MonoBehaviour
         {
             uiElements[currentIndex].SetActive(true);
             centered = false;
+            level.enabled = true;
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
@@ -93,7 +94,6 @@ public class MenuCameraScript : MonoBehaviour
 
             if (currentIndex == 0)
             {
-                level.enabled = true;
                 level.text = "Level 1";
                 if (Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
@@ -102,7 +102,6 @@ public class MenuCameraScript : MonoBehaviour
             }
             if (currentIndex == 1)
             {
-                level.enabled = true;
                 level.text = "Level 2";
                 if (Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
@@ -111,7 +110,6 @@ public class MenuCameraScript : MonoBehaviour
             }
             if (currentIndex == 2)
             {
-                level.enabled = true;
                 level.text = "Level 3";
                 if (Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
@@ -120,7 +118,6 @@ public class MenuCameraScript : MonoBehaviour
             }
             if (currentIndex == 3)
             {
-                level.enabled = true;
                 level.text = "Level 4";
                 if (Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
@@ -129,7 +126,6 @@ public class MenuCameraScript : MonoBehaviour
             }
             if (currentIndex == 4)
             {
-                level.enabled = true;
                 level.text = "Level 5";
                 if (Input.GetKeyDown(KeyCode.KeypadEnter))
                 {
@@ -168,7 +164,7 @@ public class MenuCameraScript : MonoBehaviour
     void MoveToCenter()
     {
         centered = true;
-        transform.position = Vector3.MoveTowards(transform.position, center, speed * Time.deltaTime);
+        transform.position = (center);
     }
 }
 
