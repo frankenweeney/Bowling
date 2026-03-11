@@ -1,5 +1,6 @@
 
 using TMPro;
+using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.UI;
 using static UnityEngine.Rendering.DebugUI;
@@ -28,6 +29,7 @@ public class LaunchScript : MonoBehaviour
     {
         progressBar.fillAmount = 0;
         held = false;
+        rb.useGravity = false;
     }
     public void Update()
     {
@@ -85,6 +87,7 @@ public class LaunchScript : MonoBehaviour
 
     public void Launch()
     {
+        rb.useGravity = true;
         rb.AddForce(Vector3.forward * force, ForceMode.Force);
         launched = true;
         HideProgressBars();

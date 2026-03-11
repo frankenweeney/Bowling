@@ -9,6 +9,7 @@ public class MenuCameraScript : MonoBehaviour
     public Camera camera;
     public float rotationSpeed = 90;
     public float speed = 90f;
+    public AudioBehaviour music;
 
     public List<GameObject> uiElements;
     private int currentIndex = 0;
@@ -20,6 +21,7 @@ public class MenuCameraScript : MonoBehaviour
     public bool inLvlSelection;
     public bool inBallSelection;
     public bool centered;
+    public bool atCounter;
 
     public Vector3 center = new Vector3 (-3.45f, 2.34f, -7.78f);
     public Vector3 front = new Vector3(-5, 3, -1);
@@ -35,6 +37,7 @@ public class MenuCameraScript : MonoBehaviour
         inLvlSelection = false;
         inBallSelection = false;
         levelSelect.enabled = false;
+        atCounter = false;
 
         if (uiElements == null || uiElements.Count == 0)
         {
@@ -54,11 +57,23 @@ public class MenuCameraScript : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow) && centered == true)
         {
            transform.Rotate(Vector3.down, rotationSpeed * Time.deltaTime);
+           leftArrow.color = Color.white;
+
         }
 
         if (Input.GetKey(KeyCode.RightArrow) && centered == true)
         {
             transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
+            rightArrow.color = Color.white;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftArrow) && centered == true)
+        {
+            leftArrow.color = default;
+        }
+        if (Input.GetKeyUp(KeyCode.RightArrow) && centered == true)
+        {
+            rightArrow.color = default;
         }
 
 
@@ -82,13 +97,8 @@ public class MenuCameraScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                centered = false;
                 transform.position = (horse);
-            }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                transform.position = (center);
-                centered = true;
+                atCounter = true;
             }
         }
 
@@ -170,6 +180,14 @@ public class MenuCameraScript : MonoBehaviour
                 MoveToCenter();
             }
         }
+
+        if (atCounter == true)
+        {
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                MoveToCenter();
+            }
+        }
     }
 
 
@@ -200,6 +218,7 @@ public class MenuCameraScript : MonoBehaviour
         rightArrow.enabled = true;
         inBallSelection = false;
         inLvlSelection = false;
+        atCounter = false;
     }
 }
 
