@@ -22,11 +22,14 @@ public class MenuCameraScript : MonoBehaviour
     public bool inBallSelection;
     public bool centered;
     public bool atCounter;
+    public bool atDoor;
 
     public Vector3 center = new Vector3 (-3.45f, 2.34f, -7.78f);
     public Vector3 front = new Vector3(-5, 3, -1);
     public Vector3 left = new Vector3();
     public Vector3 horse = new Vector3();
+    public Vector3 door = new Vector3();
+
 
     public Cursor cursor;
 
@@ -38,6 +41,7 @@ public class MenuCameraScript : MonoBehaviour
         inBallSelection = false;
         levelSelect.enabled = false;
         atCounter = false;
+        atDoor = false;
 
         if (uiElements == null || uiElements.Count == 0)
         {
@@ -99,6 +103,14 @@ public class MenuCameraScript : MonoBehaviour
             {
                 transform.position = (horse);
                 atCounter = true;
+            }
+        }
+        if (transform.rotation.eulerAngles.y > 140 && transform.rotation.eulerAngles.y < 160 && centered == true)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                transform.position = (door);
+                atDoor = true;
             }
         }
 
@@ -183,6 +195,16 @@ public class MenuCameraScript : MonoBehaviour
 
         if (atCounter == true)
         {
+            centered = false;
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                MoveToCenter();
+            }
+        }
+
+        if (atDoor == true)
+        {
+            centered = false;
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 MoveToCenter();
@@ -219,6 +241,7 @@ public class MenuCameraScript : MonoBehaviour
         inBallSelection = false;
         inLvlSelection = false;
         atCounter = false;
+        atDoor = false;
     }
 }
 
