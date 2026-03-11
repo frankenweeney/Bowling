@@ -68,6 +68,7 @@ public class SelectionScript : MonoBehaviour
         {
             PlayerPrefs.SetInt("ballNumber", 8);
         }
+        PlayerPrefs.Save();
     }
 
     

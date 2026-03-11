@@ -15,6 +15,7 @@ public class MenuCameraScript : MonoBehaviour
     public TextMeshProUGUI level;
     public RawImage leftArrow;
     public RawImage rightArrow;
+    public RawImage levelSelect;
 
     public bool inLvlSelection;
     public bool inBallSelection;
@@ -23,6 +24,7 @@ public class MenuCameraScript : MonoBehaviour
     public Vector3 center = new Vector3 (-3.45f, 2.34f, -7.78f);
     public Vector3 front = new Vector3(-5, 3, -1);
     public Vector3 left = new Vector3();
+    public Vector3 horse = new Vector3();
 
     public Cursor cursor;
 
@@ -32,6 +34,7 @@ public class MenuCameraScript : MonoBehaviour
         centered = true;
         inLvlSelection = false;
         inBallSelection = false;
+        levelSelect.enabled = false;
 
         if (uiElements == null || uiElements.Count == 0)
         {
@@ -59,7 +62,7 @@ public class MenuCameraScript : MonoBehaviour
         }
 
 
-        if (transform.rotation.eulerAngles.y > 315 || transform.rotation.eulerAngles.y < 45 && centered == true)
+        if (transform.rotation.eulerAngles.y > -45 && transform.rotation.eulerAngles.y < 45 && centered == true)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -67,12 +70,20 @@ public class MenuCameraScript : MonoBehaviour
                 transform.position = (front);
             }
         }
-        if (transform.rotation.eulerAngles.y > 255 || transform.rotation.eulerAngles.y < 285 && centered == true)
+        if (transform.rotation.eulerAngles.y > 255 && transform.rotation.eulerAngles.y < 285 && centered == true)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 inBallSelection = true;
                 transform.position = (left);
+            }
+        }
+        if (transform.rotation.eulerAngles.y > -160 && transform.rotation.eulerAngles.y < -132 && centered == true)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                centered = false;
+                transform.position = (horse);
             }
         }
 
@@ -81,6 +92,7 @@ public class MenuCameraScript : MonoBehaviour
             uiElements[currentIndex].SetActive(true);
             centered = false;
             level.enabled = true;
+            levelSelect.enabled = true;
 
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
