@@ -8,6 +8,7 @@ public class SelectionScript : MonoBehaviour
     private Renderer objRenderer;
     private Color originalColor;
     public Color hoverColor = Color.yellow;
+    public TextMeshProUGUI name;
     void Start()
     {
         objRenderer = GetComponent<Renderer>();
@@ -15,14 +16,51 @@ public class SelectionScript : MonoBehaviour
         {
             originalColor = objRenderer.material.color;
         }
+        name.enabled = false;
     }
 
     // Update is called once per frame
     private void OnMouseOver()
     {
+        name.enabled = true;
+
+        if (gameObject.name == "gorillaz")
+        {
+            name.text = "gorillaz";
+        }
+        if (gameObject.name == "leon")
+        {
+            name.text = "leon kennedy";
+        }
+        if (gameObject.name == "minecraft")
+        {
+            name.text = "minecraft";
+        }
+        if (gameObject.name == "regular")
+        {;
+            name.text = "default";
+        }
+        if (gameObject.name == "swag")
+        {
+            name.text = "SWAG";
+        }
+        if (gameObject.name == "twinpeaks")
+        {
+            name.text = "twin peaks";
+        }
+        if (gameObject.name == "ball7")
+        {
+            name.text = "idk";
+        }
+        if (gameObject.name == "ball8")
+        {
+            name.text = "idk";
+        }
+
         if (objRenderer != null)
         {
             objRenderer.material.color = hoverColor;
+            transform.localScale =  new Vector3(3, 3, 3);
         }
     }
 
@@ -31,7 +69,9 @@ public class SelectionScript : MonoBehaviour
         if (objRenderer != null)
         {
             objRenderer.material.color = originalColor;
+            transform.localScale = new Vector3(2.546261f, 2.546261f, 2.546261f);
         }
+        name.enabled = false;
     }
 
     public void OnMouseDown()
@@ -69,6 +109,8 @@ public class SelectionScript : MonoBehaviour
             PlayerPrefs.SetInt("ballNumber", 8);
         }
         PlayerPrefs.Save();
+
+        gameObject.SetActive(false);
     }
 
     

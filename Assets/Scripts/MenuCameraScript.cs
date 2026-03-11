@@ -78,12 +78,17 @@ public class MenuCameraScript : MonoBehaviour
                 transform.position = (left);
             }
         }
-        if (transform.rotation.eulerAngles.y > -160 && transform.rotation.eulerAngles.y < -132 && centered == true)
+        if (transform.rotation.eulerAngles.y > 200 && transform.rotation.eulerAngles.y < 228 && centered == true)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 centered = false;
                 transform.position = (horse);
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                transform.position = (center);
+                centered = true;
             }
         }
 
@@ -104,9 +109,9 @@ public class MenuCameraScript : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                inLvlSelection = false;
                 uiElements[currentIndex].SetActive(false);
                 level.enabled = false;
+                levelSelect.enabled = false;
                 MoveToCenter();
             }
 
@@ -162,11 +167,7 @@ public class MenuCameraScript : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                inBallSelection = false;
                 MoveToCenter();
-                leftArrow.enabled = true;
-                rightArrow.enabled = true;
-                centered = true;
             }
         }
     }
@@ -195,6 +196,10 @@ public class MenuCameraScript : MonoBehaviour
     {
         centered = true;
         transform.position = (center);
+        leftArrow.enabled = true;
+        rightArrow.enabled = true;
+        inBallSelection = false;
+        inLvlSelection = false;
     }
 }
 
