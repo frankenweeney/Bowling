@@ -13,13 +13,18 @@ public class MenuCameraScript : MonoBehaviour
     public List<GameObject> uiElements;
     private int currentIndex = 0;
     public TextMeshProUGUI level;
+    public RawImage leftArrow;
+    public RawImage rightArrow;
 
     public bool inLvlSelection;
     public bool inBallSelection;
     public bool centered;
 
-    public Vector3 center = new Vector3 (0, 2.34f, -7.78f);
+    public Vector3 center = new Vector3 (-3.45f, 2.34f, -7.78f);
     public Vector3 front = new Vector3(-5, 3, -1);
+    public Vector3 left = new Vector3();
+
+    public Cursor cursor;
 
     void Start()
     {
@@ -62,11 +67,12 @@ public class MenuCameraScript : MonoBehaviour
                 transform.position = (front);
             }
         }
-        if (transform.rotation.eulerAngles.y > 45 || transform.rotation.eulerAngles.y < 135 && centered == true)
+        if (transform.rotation.eulerAngles.y > 255 || transform.rotation.eulerAngles.y < 285 && centered == true)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 inBallSelection = true;
+                transform.position = (left);
             }
         }
 
@@ -138,6 +144,18 @@ public class MenuCameraScript : MonoBehaviour
         if (inBallSelection == true)
         {
             Cursor.visible = true;
+            leftArrow.enabled = false;
+            rightArrow.enabled = false;
+            centered = false;
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                inBallSelection = false;
+                MoveToCenter();
+                leftArrow.enabled = true;
+                rightArrow.enabled = true;
+                centered = true;
+            }
         }
     }
 
