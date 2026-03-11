@@ -825,7 +825,6 @@ MonoBehaviour:
   retryLvl: {fileID: 1211234409}
   menuButton: {fileID: 1748586079}
   resetButton: {fileID: 1531723513}
-  score: 0
   rb: {fileID: 620541763}
   scoreCalculated: 0
 --- !u!4 &492672259
@@ -1708,6 +1707,15 @@ MonoBehaviour:
   rollforce: 5000
   ForceMode: 0
   pinsStruck: 0
+  currentMaterial: {fileID: 0}
+  gorillaz: {fileID: 2100000, guid: 5a697c571edbfe747b1f4af0ce91afbb, type: 2}
+  leon: {fileID: 2100000, guid: 0d6553bcbba2eaf4396e2c6be1d59648, type: 2}
+  minecraft: {fileID: 2100000, guid: 2f41149c1c2b3344aa241993d3879499, type: 2}
+  regular: {fileID: -1043686014892445922, guid: 82dff05ee7435ab439c07988234fa111, type: 3}
+  swag: {fileID: 2100000, guid: a2b9c89befd11b944ad7a108ed53e03c, type: 2}
+  twinpeaks: {fileID: 2100000, guid: 3ae048fa07cfc024db733764137b4454, type: 2}
+  ball7: {fileID: 0}
+  ball8: {fileID: 0}
 --- !u!54 &620541763
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -13,7 +13,6 @@ public class PhysicsTest : MonoBehaviour
     public ForceMode ForceMode;
     public bool pinsStruck = false;
 
-    public Material currentMaterial;
     public Material gorillaz;
     public Material leon;
     public Material minecraft;
@@ -22,13 +21,13 @@ public class PhysicsTest : MonoBehaviour
     public Material twinpeaks;
     public Material ball7;
     public Material ball8;
-    int currentBall = PlayerPrefs.GetInt("ballNumber");
+    public bool ballApplied = false;
+    public int currentBall;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.GetComponent<Renderer>().material = currentMaterial;
-        
+        currentBall = PlayerPrefs.GetInt("ballNumber");
     }
 
     private void FixedUpdate()
@@ -54,37 +53,48 @@ public class PhysicsTest : MonoBehaviour
 
     private void Update()
     {
-        if (currentBall == 1)
+        if (ballApplied ==  false)
         {
-            currentMaterial = gorillaz;
-        }
-        if (currentBall == 2)
-        {
-            currentMaterial = leon;
-        }
-        if (currentBall == 3)
-        {
-            currentMaterial = minecraft;
-        }
-        if (currentBall == 4)
-        {
-            currentMaterial = regular;
-        }
-        if (currentBall == 5)
-        {
-            currentMaterial = swag;
-        }
-        if (currentBall == 6)
-        {
-            currentMaterial = twinpeaks;
-        }
-        if (currentBall == 7)
-        {
-            currentMaterial = ball7;
-        }
-        if (currentBall == 8)
-        {
-            currentMaterial = ball8;
+            if (currentBall == 1)
+            {
+                rb.GetComponent<Renderer>().material = gorillaz;
+                ballApplied = true;
+            }
+            if (currentBall == 2)
+            {
+                rb.GetComponent<Renderer>().material = leon;
+                ballApplied = true;
+            }
+            if (currentBall == 3)
+            {
+                rb.GetComponent<Renderer>().material = minecraft;
+                ballApplied = true;
+            }
+            if (currentBall == 4)
+            {
+                rb.GetComponent<Renderer>().material = regular;
+                ballApplied = true;
+            }
+            if (currentBall == 5)
+            {
+                rb.GetComponent<Renderer>().material = swag;
+                ballApplied = true;
+            }
+            if (currentBall == 6)
+            {
+                rb.GetComponent<Renderer>().material = twinpeaks;
+                ballApplied = true;
+            }
+            if (currentBall == 7)
+            {
+                rb.GetComponent<Renderer>().material = ball7;
+                ballApplied = true;
+            }
+            if (currentBall == 8)
+            {
+                rb.GetComponent<Renderer>().material = ball8;
+                ballApplied = true;
+            }
         }
     }
   
