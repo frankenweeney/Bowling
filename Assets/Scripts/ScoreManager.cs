@@ -38,6 +38,7 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         scoreCalculated = false;
         HideLevelUI();
+        hsLvl1 = 0;
     }
     void Update()
     {
@@ -50,7 +51,7 @@ public class ScoreManager : MonoBehaviour
         if (score > hsLvl1)
         {
             hsLvl1 = score;
-            PlayerPrefs.SetInt("highscore", score);
+            PlayerPrefs.SetInt("best score", hsLvl1);
         }
     }
 
@@ -132,5 +133,15 @@ public class ScoreManager : MonoBehaviour
         resetButton.gameObject.SetActive(false);
     }
 
-   
+    public void SaveNumber()
+    {
+        PlayerPrefs.SetInt("best score", hsLvl1);
+    }
+
+    public void LoadNumber()
+    {
+        int loadedNumber = PlayerPrefs.GetInt("best score");
+    }
+
+
 }
