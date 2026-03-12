@@ -48,13 +48,13 @@ public class SelectionScript : MonoBehaviour
         {
             name.text = "twin peaks";
         }
-        if (gameObject.name == "ball7")
+        if (gameObject.name == "horseball")
         {
-            name.text = "idk";
+            name.text = "horse ball";
         }
-        if (gameObject.name == "ball8")
+        if (gameObject.name == "galaxy")
         {
-            name.text = "idk";
+            name.text = "galaxy wolf";
         }
 
         if (objRenderer != null)
@@ -100,11 +100,11 @@ public class SelectionScript : MonoBehaviour
         {
             PlayerPrefs.SetInt("ballNumber", 6);
         }
-        if (gameObject.name == "ball7")
+        if (gameObject.name == "horseball")
         {
             PlayerPrefs.SetInt("ballNumber", 7);
         }
-        if (gameObject.name == "ball8")
+        if (gameObject.name == "galaxy")
         {
             PlayerPrefs.SetInt("ballNumber", 8);
         }

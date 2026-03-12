@@ -1714,8 +1714,8 @@ MonoBehaviour:
   regular: {fileID: -1043686014892445922, guid: 82dff05ee7435ab439c07988234fa111, type: 3}
   swag: {fileID: 2100000, guid: a2b9c89befd11b944ad7a108ed53e03c, type: 2}
   twinpeaks: {fileID: 2100000, guid: 3ae048fa07cfc024db733764137b4454, type: 2}
-  ball7: {fileID: 0}
-  ball8: {fileID: 0}
+  horseball: {fileID: 2100000, guid: c724baad1cff5fa43b0bea498a45c0d9, type: 2}
+  galaxy: {fileID: 2100000, guid: 9b2dd8b0f9928d4449c304343449c7f1, type: 2}
   ballApplied: 0
   currentBall: 0
 --- !u!54 &620541763

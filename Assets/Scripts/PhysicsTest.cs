@@ -19,8 +19,8 @@ public class PhysicsTest : MonoBehaviour
     public Material regular;
     public Material swag;
     public Material twinpeaks;
-    public Material ball7;
-    public Material ball8;
+    public Material horseball;
+    public Material galaxy;
     public bool ballApplied = false;
     public int currentBall;
 
@@ -87,12 +87,12 @@ public class PhysicsTest : MonoBehaviour
             }
             if (currentBall == 7)
             {
-                rb.GetComponent<Renderer>().material = ball7;
+                rb.GetComponent<Renderer>().material = horseball;
                 ballApplied = true;
             }
             if (currentBall == 8)
             {
-                rb.GetComponent<Renderer>().material = ball8;
+                rb.GetComponent<Renderer>().material = galaxy;
                 ballApplied = true;
             }
         }

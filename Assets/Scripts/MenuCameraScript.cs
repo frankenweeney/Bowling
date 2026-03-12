@@ -14,6 +14,7 @@ public class MenuCameraScript : MonoBehaviour
     public List<GameObject> uiElements;
     private int currentIndex = 0;
     public TextMeshProUGUI level;
+    public TextMeshProUGUI name;
     public RawImage leftArrow;
     public RawImage rightArrow;
     public RawImage levelSelect;
@@ -242,6 +243,7 @@ public class MenuCameraScript : MonoBehaviour
         inLvlSelection = false;
         atCounter = false;
         atDoor = false;
+        name.enabled = false;
     }
 }
 
