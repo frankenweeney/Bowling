@@ -12,6 +12,18 @@ public class ButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("LevelTwo");
     }
+    public void GoToLvlThree()
+    {
+        SceneManager.LoadScene("LevelThree");
+    }
+    public void GoToLvlFour()
+    {
+        SceneManager.LoadScene("LevelFour");
+    }
+    public void GoToLvlFive()
+    {
+        SceneManager.LoadScene("LevelFive");
+    }
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("AlleyScene");

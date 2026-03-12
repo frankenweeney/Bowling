@@ -24,12 +24,20 @@ public class MenuCameraScript : MonoBehaviour
     public bool centered;
     public bool atCounter;
     public bool atDoor;
+    public bool atWall;
+
+    public GameObject doorArrow;
+    public GameObject wallArrow;
+    public GameObject laneArrow;
+    public GameObject selectArrow;
+    public GameObject counterArrow;
 
     public Vector3 center = new Vector3 (-3.45f, 2.34f, -7.78f);
     public Vector3 front = new Vector3(-5, 3, -1);
     public Vector3 left = new Vector3();
     public Vector3 horse = new Vector3();
     public Vector3 door = new Vector3();
+    public Vector3 wall = new Vector3();
 
 
     public Cursor cursor;
@@ -43,6 +51,8 @@ public class MenuCameraScript : MonoBehaviour
         levelSelect.enabled = false;
         atCounter = false;
         atDoor = false;
+        atWall = false;
+
 
         if (uiElements == null || uiElements.Count == 0)
         {
@@ -82,37 +92,72 @@ public class MenuCameraScript : MonoBehaviour
         }
 
 
-        if (transform.rotation.eulerAngles.y > -45 && transform.rotation.eulerAngles.y < 45 && centered == true)
+        if (transform.rotation.eulerAngles.y > 320 && transform.rotation.eulerAngles.y < 20 && centered == true)
         {
+            laneArrow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 inLvlSelection = true;
                 transform.position = (front);
             }
         }
+        else
+        {
+            laneArrow.SetActive(false);
+        }
+
         if (transform.rotation.eulerAngles.y > 255 && transform.rotation.eulerAngles.y < 285 && centered == true)
         {
+            selectArrow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 inBallSelection = true;
                 transform.position = (left);
             }
         }
+        else
+        {
+            selectArrow.SetActive(false);
+        }
+
         if (transform.rotation.eulerAngles.y > 200 && transform.rotation.eulerAngles.y < 228 && centered == true)
         {
+            counterArrow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 transform.position = (horse);
                 atCounter = true;
             }
         }
+        else
+        {
+            counterArrow.SetActive(false);
+        }
+
         if (transform.rotation.eulerAngles.y > 140 && transform.rotation.eulerAngles.y < 160 && centered == true)
         {
+            doorArrow.SetActive(true);
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 transform.position = (door);
                 atDoor = true;
             }
+        }
+        else
+            doorArrow.SetActive(false);
+
+        if (transform.rotation.eulerAngles.y > 90 && transform.rotation.eulerAngles.y < 125 && centered == true)
+        {
+            wallArrow.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                transform.position = (wall);
+                atWall = true;
+            }
+        }
+        else
+        {
+            wallArrow.SetActive(false);
         }
 
         if (inLvlSelection == true)
@@ -211,6 +256,15 @@ public class MenuCameraScript : MonoBehaviour
                 MoveToCenter();
             }
         }
+
+        if (atWall == true)
+        {
+            centered = false;
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                MoveToCenter();
+            }
+        }
     }
 
 
@@ -244,7 +298,9 @@ public class MenuCameraScript : MonoBehaviour
         atCounter = false;
         atDoor = false;
         name.enabled = false;
+        atWall = false;
     }
+  
 }
 
 
