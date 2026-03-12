@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2f67ec3455fb0ed4ea039eba151c1966, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -982,7 +982,7 @@ MonoBehaviour:
   pin10: {fileID: 1586207011}
   ball: {fileID: 620541756}
   ScoreText: {fileID: 1390835032}
-  LevelText: {fileID: 0}
+  completed: {fileID: 0}
   nextLvl: {fileID: 0}
   retryLvl: {fileID: 0}
   menuButton: {fileID: 0}
@@ -1499,8 +1499,8 @@ MonoBehaviour:
   regular: {fileID: -1043686014892445922, guid: 82dff05ee7435ab439c07988234fa111, type: 3}
   swag: {fileID: 2100000, guid: a2b9c89befd11b944ad7a108ed53e03c, type: 2}
   twinpeaks: {fileID: 2100000, guid: 3ae048fa07cfc024db733764137b4454, type: 2}
-  ball7: {fileID: 0}
-  ball8: {fileID: 0}
+  horseball: {fileID: 0}
+  galaxy: {fileID: 0}
   ballApplied: 0
   currentBall: 0
 --- !u!54 &620541763

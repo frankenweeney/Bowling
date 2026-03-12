@@ -13,7 +13,7 @@ public class HorseScript : MonoBehaviour
 
     void Update()
     {
-        if (transform.rotation.eulerAngles.y > 170 && transform.rotation.eulerAngles.y < 260)
+        if (player.rotation.eulerAngles.y > 170 && transform.rotation.eulerAngles.y < 260)
         {
             // Calculate direction to target
             Vector3 direction = player.position - transform.position;

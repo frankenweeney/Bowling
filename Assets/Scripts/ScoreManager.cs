@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
 
     public GameObject ball;
     public TextMeshProUGUI ScoreText;
-    public TextMeshProUGUI LevelText;
+    public RawImage completed;
     public Button nextLvl;
     public Button retryLvl;
     public Button menuButton;
@@ -116,7 +116,7 @@ public class ScoreManager : MonoBehaviour
     public void HideLevelUI()
     {
         ScoreText.enabled = false;
-        LevelText.enabled = false;
+        completed.enabled = false;
         nextLvl.gameObject.SetActive(false);
         retryLvl.gameObject.SetActive(false);
         menuButton.gameObject.SetActive(false);
@@ -126,7 +126,7 @@ public class ScoreManager : MonoBehaviour
     public void ShowLevelUI()
     {
         ScoreText.enabled = true;
-        LevelText.enabled = true;
+        completed.enabled = true;
         nextLvl.gameObject.SetActive(true);
         retryLvl.gameObject.SetActive(true);
         menuButton.gameObject.SetActive(true);
